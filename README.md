@@ -65,10 +65,10 @@ WantedBy=multi-user.target
 
 Запустите и включите автозапуск:
 
-sudo systemctl daemon-reload
-sudo systemctl enable telegram_bot.service
-sudo systemctl start telegram_bot.service
-sudo journalctl -u telegram_bot.service -f
+-sudo systemctl daemon-reload
+-sudo systemctl enable telegram_bot.service
+-sudo systemctl start telegram_bot.service
+-sudo journalctl -u telegram_bot.service -f
 
 
 ---
