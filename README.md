@@ -6,10 +6,10 @@
 
 ## Что делает бот
 
-- Выводит информацию из CSV базы (название, цена, дата)
-- Поддерживает команды: /start, /help, /top, /row, /col, /search, /today, /count_pos, /price
-- Разбивает длинные сообщения на части для Telegram
-- Сортирует объявления по цене
+- Выводит информацию из CSV базы (название, цена, дата)  
+- Поддерживает команды: /start, /help, /top, /row, /col, /search, /today, /count_pos, /price  
+- Разбивает длинные сообщения на части для Telegram  
+- Сортирует объявления по цене  
 
 ---
 
@@ -17,18 +17,20 @@
 
 ### Требования
 
-- Python 3.8+
-- Библиотеки из `requirements.txt` (fastapi, uvicorn, python-telegram-bot, pandas и пр.)
+- Python 3.8+  
+- Библиотеки из `requirements.txt` (fastapi, uvicorn, python-telegram-bot, pandas и прочее)  
 
 ### Запуск в режиме разработки
 
 pip install -r requirements.txt
 python main.py
 
+text
+
 Это запустит:
 
-- Telegram-бот (параллельный процесс)
-- FastAPI сервер на порту 8000
+- Telegram-бот (параллельный процесс)  
+- FastAPI сервер на порту 8000  
 
 ---
 
@@ -38,7 +40,9 @@ python main.py
 
 uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4
 
-Telegram-бот рекомендуется запустить отдельным процессом через systemd или supervisor.
+text
+
+Telegram-бот рекомендуется запускать отдельным процессом через systemd или supervisor.
 
 ---
 
@@ -62,20 +66,22 @@ RestartSec=10
 [Install]
 WantedBy=multi-user.target
 
+text
 
-Запустите и включите автозапуск:
+Запустите и добавьте автозапуск:
 
--sudo systemctl daemon-reload
--sudo systemctl enable telegram_bot.service
--sudo systemctl start telegram_bot.service
--sudo journalctl -u telegram_bot.service -f
+sudo systemctl daemon-reload
+sudo systemctl enable telegram_bot.service
+sudo systemctl start telegram_bot.service
+sudo journalctl -u telegram_bot.service -f
 
+text
 
 ---
 
-## Запуск FastAPI с systemd
+## Пример systemd-сервиса для FastAPI
 
-Создайте файл `/etc/systemd/system/fastapi.service`:
+Создайте файл `/etc/systemd/system/fastapi.service` с содержимым:
 
 [Unit]
 Description=FastAPI Service
@@ -93,8 +99,9 @@ RestartSec=10
 [Install]
 WantedBy=multi-user.target
 
+text
 
-Запустите и включите:
+Запустите и добавьте автозапуск:
 
 sudo systemctl daemon-reload
 sudo systemctl enable fastapi.service
