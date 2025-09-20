@@ -25,7 +25,6 @@
 pip install -r requirements.txt
 python main.py
 
-text
 
 Это запустит:
 
@@ -40,7 +39,7 @@ text
 
 uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4
 
-text
+
 
 Telegram-бот рекомендуется запускать отдельным процессом через systemd или supervisor.
 
@@ -66,7 +65,7 @@ RestartSec=10
 [Install]
 WantedBy=multi-user.target
 
-text
+
 
 Запустите и добавьте автозапуск:
 
@@ -99,11 +98,10 @@ RestartSec=10
 [Install]
 WantedBy=multi-user.target
 
-text
 
 Запустите и добавьте автозапуск:
 
-sudo systemctl daemon-reload
-sudo systemctl enable fastapi.service
-sudo systemctl start fastapi.service
-sudo journalctl -u fastapi.service -f
+sudo systemctl daemon-reload  
+sudo systemctl enable fastapi.service  
+sudo systemctl start fastapi.service  
+sudo journalctl -u fastapi.service -f  
