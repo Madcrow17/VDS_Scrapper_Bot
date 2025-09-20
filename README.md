@@ -49,6 +49,8 @@ Telegram-бот рекомендуется запускать отдельным
 
 Создайте файл `/etc/systemd/system/telegram_bot.service` с содержимым:
 
+
+
 [Unit]
 Description=Telegram Bot Service
 After=network.target
@@ -67,6 +69,7 @@ WantedBy=multi-user.target
 
 
 
+
 Запустите и добавьте автозапуск:
 
 sudo systemctl daemon-reload  
@@ -81,6 +84,8 @@ text
 ## Пример systemd-сервиса для FastAPI
 
 Создайте файл `/etc/systemd/system/fastapi.service` с содержимым:
+
+
 
 [Unit]
 Description=FastAPI Service
@@ -97,6 +102,8 @@ RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
+
+
 
 
 Запустите и добавьте автозапуск:
