@@ -51,21 +51,21 @@ Telegram-бот рекомендуется запускать отдельным
 
 
 
-[Unit]
+[Unit]  
 Description=Telegram Bot Service
 After=network.target
 
-[Service]
-User=youruser
-WorkingDirectory=/opt/VDS_Scrapper_Bot
-Environment="PATH=/opt/VDS_Scrapper_Bot/bot_venv/bin"
-ExecStart=/opt/VDS_Scrapper_Bot/bot_venv/bin/python /opt/VDS_Scrapper_Bot/main.py
+[Service]  
+User=youruser  
+WorkingDirectory=/opt/VDS_Scrapper_Bot  
+Environment="PATH=/opt/VDS_Scrapper_Bot/bot_venv/bin"  
+ExecStart=/opt/VDS_Scrapper_Bot/bot_venv/bin/python /opt/VDS_Scrapper_Bot/main.py  
 
-Restart=always
-RestartSec=10
+Restart=always  
+RestartSec=10  
 
-[Install]
-WantedBy=multi-user.target
+[Install]  
+WantedBy=multi-user.target  
 
 
 
@@ -87,21 +87,21 @@ text
 
 
 
-[Unit]
-Description=FastAPI Service
-After=network.target
+[Unit]  
+Description=FastAPI Service  
+After=network.target  
 
-[Service]
-User=youruser
-WorkingDirectory=/opt/VDS_Scrapper_Bot
-Environment="PATH=/opt/VDS_Scrapper_Bot/bot_venv/bin"
-ExecStart=/opt/VDS_Scrapper_Bot/bot_venv/bin/uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4
+[Service]  
+User=youruser  
+WorkingDirectory=/opt/VDS_Scrapper_Bot  
+Environment="PATH=/opt/VDS_Scrapper_Bot/bot_venv/bin"  
+ExecStart=/opt/VDS_Scrapper_Bot/bot_venv/bin/uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4  
 
-Restart=always
-RestartSec=10
+Restart=always  
+RestartSec=10  
 
-[Install]
-WantedBy=multi-user.target
+[Install]  
+WantedBy=multi-user.target  
 
 
 
