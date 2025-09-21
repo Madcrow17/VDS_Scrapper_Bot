@@ -9,7 +9,7 @@ import asyncio
 import csv
 import re
 
-API_TOKEN = "7489579759:AAHj0phmAr37wvE7EmRx6VNce2WkIrrGVq0" # токен телеграм бота
+API_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN" # токен телеграм бота
 CSV_PATH = "/opt/VDS_Scrapper/guns_data_308.csv"  # путь к CSV с 3 колонками
 
 app = FastAPI()
