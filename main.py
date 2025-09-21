@@ -10,7 +10,7 @@ import csv
 import re
 
 API_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN" # токен телеграм бота
-CSV_PATH = "/opt/VDS_Scrapper/guns_data_308.csv"  # путь к CSV с 3 колонками
+CSV_PATH = "/opt/VDS_Scrapper/guns_data_308.csv"  # путь к CSV
 
 app = FastAPI()
 application = Application.builder().token(API_TOKEN).build()
